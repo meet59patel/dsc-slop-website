@@ -91,6 +91,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HomePage() {
   const classes = useStyles();
+  // React.useEffect(() => {
+  //   window.location.reload();
+  // }, []);
 
   return (
     <ReactFullpage
@@ -108,20 +111,19 @@ export default function HomePage() {
           <ReactFullpage.Wrapper>
             <Grid container justify="center">
               <Grid className="section" item xs={12}>
-                <div>
-                  <CardMedia
+                <div className="min-h-screen relative">
+                  {/* <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
-                    image={bg}
+                    className="min-h-screen absolute"
                     title="Contemplative Reptile"
-                  />
-<<<<<<< HEAD
-                  {/* <div className="absolute text-center w-full h-full">
-                    <div className={classes.textdiv}>
-                      <Typography
-=======
+                  /> */}
                   <div className={'fixed text-center w-full ' + classes.logo}>
-                    <LogoBear className={'max-w-sm mx-auto '} />
+                    <LogoBear
+                      className={
+                        'max-w-sm xs:max-w-xs xs:-translate-x-12 mx-auto transform -translate-x-20 '
+                      }
+                    />
                     <img
                       src={logo}
                       className="max-w-2xl xs:max-w-xs mx-auto mt-20"
@@ -129,7 +131,6 @@ export default function HomePage() {
 
                     {/* <div className={classes.textdiv}> */}
                     {/* <Typography
->>>>>>> 31514b7fbb9863619649696c4405b99eef7de560
                         className={classes.textcap + ' txt--gradient-orange'}
                         color="textPrimary"
                       >
@@ -146,28 +147,16 @@ export default function HomePage() {
                         color="textPrimary"
                       >
                         <b>S E M E S T E R - L O N G - P R O J E C T S</b>
-<<<<<<< HEAD
-                      </Typography>
-                    </div>
-                  </div> */}
-=======
                       </Typography> */}
                   </div>
->>>>>>> 31514b7fbb9863619649696c4405b99eef7de560
                 </div>
                 {/* </div> */}
               </Grid>
 
               <Grid className="section " item xs={12}>
                 <Container maxWidth="md">
-                  <Paper
-                    className={classes.paperCounter}
-                    // style={{ marginBottom: 0 }}
-                  >
-                    <Countdown
-                      // className="py-12"
-                      toDate={new Date(2020, 9, 20)}
-                    />
+                  <Paper className={classes.paperCounter}>
+                    <Countdown toDate={new Date(2020, 9, 23)} />
                   </Paper>
                 </Container>
               </Grid>
@@ -205,22 +194,20 @@ export default function HomePage() {
                       </Grid>
                       <Grid item>
                         <Typography variant="body1" align="left">
-                          Semester Long Projects or SLoP is an initiative by
-                          Developer Student Club, DA-IICT exclusively for
-                          students of DA-IICT who are new to open source
-                          software development to get started with open source
+                          Semester Long Projects or SLoP is an initiative by the
+                          Developer Student Club (DA-IICT), exclusively for
+                          students who are new to open source software
+                          development to get started with open source
                           contributions.
                         </Typography>
                       </Grid>
                       <Grid item>
                         <Typography variant="body1" align="left">
-                          It’s modeled to be similar but smaller Google Summer
-                          of Code (GSoC), which is global that matches students
-                          up with open source, free software and
-                          technology-related organizations to write code and get
-                          paid for the same. Similarly, SLoP is aimed at
-                          introducing new students in the area and helps them
-                          gain confidence
+                          We want to increase the development culture and
+                          involvement of students with open-source technologies
+                          which will present the benefits of open source as well
+                          as introduce them to the cutting edge tech and coding
+                          practices.
                         </Typography>
                       </Grid>
                     </Grid>
@@ -242,15 +229,17 @@ export default function HomePage() {
                         <Typography variant="body1" align="left">
                           Participants can apply for the program either as a
                           student or as a mentor. Mentors are selected through a
-                          selection process. The selected mentors propose
-                          projects, the best of which are chosen to be included
-                          in the program. Students work on these projects in
-                          their winter vacations. The mentors review the pull
-                          requests and the overall work on their project by
-                          various contributors throughout the coding period of
-                          the program. At the end of the coding period, the
-                          students are compared on the basis of most
-                          contributions.
+                          process at the discretion of the organizers. The
+                          selected mentors propose projects, the best of which
+                          are chosen to be included in the program. Students
+                          work on these projects during the semester and try to
+                          contribute as much as they can. The mentors review the
+                          PRs and the overall work on their project of various
+                          contributors throughout the coding period of the
+                          program by assigning them some points. At the end of
+                          the coding period, the students are compared on the
+                          basis of the value of their contributions and their
+                          points.
                         </Typography>
                       </Grid>
                       <Grid item>
@@ -312,11 +301,14 @@ export default function HomePage() {
                           <b> Are You Student ? </b>
                         </Typography>
                         <Typography variant="body2" className={classes.typo}>
-                          If you are new to the open source world and You want
-                          to exlplore things, new techs. or you are just getting
-                          started, Don't worry, headout here and fill out the
-                          student form. We'll guide you throughout whole
-                          project, and you can win exciting prizes.
+                          If you are new to the ginormous world of open source
+                          development or development in general, or just want to
+                          explore, then SLoP is perfect for you. You'll get to
+                          learn some super cool stuff from great mentors (most
+                          of them will be working on awesome tech!) and can
+                          compete for amazing prizes with your fellow beginners.
+                          For more details, check out the Student's Manual above
+                          and to register click below!
                         </Typography>
                         <Fab variant="extended" color="secondary">
                           <School style={{ margin: 8 }} />
@@ -333,11 +325,14 @@ export default function HomePage() {
                           <b> Are You Mentor ? </b>
                         </Typography>
                         <Typography variant="body2" className={classes.typo}>
-                          If you are confident, knowlegable enough and You can
-                          teach other's as well, then fill out the Mentor's
-                          Form. Even if you know the techs, still you can learn
-                          to be better and can help others. Teaching always
-                          makes you push to Learning.
+                          If you feel that you want to contribute back to
+                          open-source and guide your fellow peers properly, then
+                          SLoP is a great platform for you. You can interact
+                          with new developers (you might also learn some cool
+                          new things!) and guide them through your project. As a
+                          bonus, you can get a chance to win a prize! For more
+                          details, check out the Mentor's Manual above and to
+                          register click below!
                         </Typography>
                         <Fab variant="extended" color="secondary">
                           <LaptopMac style={{ margin: 8 }} />
@@ -360,10 +355,7 @@ export default function HomePage() {
                     className={classes.paper}
                     // style={{ backgroundColor: '#0000' }}
                   >
-                    <Typography
-                      className="txt--gradient-orange mb-12"
-                      variant="h4"
-                    >
+                    <Typography className="txt--gradient-orange" variant="h4">
                       <b> Event Timeline</b>
                     </Typography>
                     {/* <Divider variant="middle" /> */}
