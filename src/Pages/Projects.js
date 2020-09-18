@@ -60,7 +60,7 @@ export default function Projects() {
     const fetch = () => {
       axios
         .get(
-          'https://frozen-chamber-70814.herokuapp.com/getData'
+          'https://script.google.com/macros/s/AKfycbw33V3utIboH-9H-S-dZj_zL25_CaHH4-1cyBz1IognJmONis9r/exec'
         )
         .then(({ data }) => {
           setData(data.projects);
