@@ -105,11 +105,7 @@ export default function HomePage() {
       responsiveWidth={600}
       navigation={true}
       scrollOverflow={true}
-      //fullpage options
-      // licenseKey={'YOUR_KEY_HERE'}
-      // paddingTop="10px"
       scrollingSpeed={700}
-      // fitToSection={false}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
@@ -119,12 +115,6 @@ export default function HomePage() {
                 <div id="stars2"></div>
                 <div id="stars3"></div>
                 <div className="min-h-screen relative">
-                  {/* <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    className="min-h-screen absolute"
-                    title="Contemplative Reptile"
-                  /> */}
                   <div className={'fixed text-center w-full ' + classes.logo}>
                     <LogoBear
                       className={
@@ -148,41 +138,12 @@ export default function HomePage() {
                       className="mt-8 xs:text-xl text-3xl blink blink-two"
                     >
                       <div className="txt--gradient-orange">
-                        <b>Selection Mail Sent to all Participants.<br/>
-                          Check your Spam mails also or check on Devfolio Dashboard</b>
+                        <b>SLoP is Open Now.<br/>
+                         Make Your contributions !!!</b>
                       </div>
                     </Typography>
-                    {/* <div className="w-full flex justify-center mt-8">
-                      <ApplyWithDevfolio className="h-6 w-6 mr-2 logo mx-auto" />
-                    </div> */}
-
-                    {/* <Typography
-                      color="textPrimary"
-                      className="mt-20 xs:text-xl text-3xl blink blink-two"
-                    >
-                        <div className="txt--gradient-orange">
-                          <b>Student Applications will begin from 15th September.</b>
-                        </div>
-
-                    </Typography> */}
-
-                    {/* <div className={classes.textdiv}> */}
-
-                    {/* <Typography
-                        className={classes.textover + ' txt--gradient-orange'}
-                        color="textPrimary"
-                      >
-                        <b>S L o P</b>
-                      </Typography> */}
-                    {/* <Typography
-                        className={classes.textcap + ' txt--gradient-orange'}
-                        color="textPrimary"
-                      >
-                        <b>S E M E S T E R - L O N G - P R O J E C T S</b>
-                      </Typography> */}
                   </div>
                 </div>
-                {/* </div> */}
               </Grid>
 
               <Grid className="section " item xs={12}>
@@ -192,25 +153,6 @@ export default function HomePage() {
                   </Paper>
                 </Container>
               </Grid>
-              {/* <Grid className="section" item xs={12}>
-                <Container maxWidth="md">
-                  <Paper
-                    className={classes.paper}
-                    style={{ marginBottom: 0, backgroundColor: '#303030' }}
-                  >
-                    <Typography
-                      className={classes.textcap}
-                      color="textSecondary"
-                    >
-                      Prizes Worth
-                    </Typography>
-                    <Typography className={classes.prizes} color="textPrimary">
-                      ₹ 15,000/-
-                    </Typography>
-                  </Paper>
-                </Container>
-              </Grid> */}
-
               <Grid className="section xs:py-12" item xs={12}>
                 <Container maxWidth="md">
                   <Paper className={classes.paper}>
@@ -222,7 +164,6 @@ export default function HomePage() {
                         >
                           <b>What is SLoP ?</b>
                         </Typography>
-                        {/* <Divider className="my-3" variant="fullWidth" /> */}
                       </Grid>
                       <Grid item>
                         <Typography variant="body1" align="left">
@@ -255,7 +196,6 @@ export default function HomePage() {
                         >
                           <b>How it Works ?</b>
                         </Typography>
-                        {/* <Divider className="my-3" variant="fullWidth" /> */}
                       </Grid>
                       <Grid item>
                         <Typography variant="body1" align="left">
@@ -289,6 +229,7 @@ export default function HomePage() {
                       >
                         <Grid item>
                           <Button
+                            style={{width:"200px"}}
                             variant="contained"
                             className={classes.button}
                             color="secondary"
@@ -301,6 +242,7 @@ export default function HomePage() {
                         </Grid>
                         <Grid item>
                           <Button
+                            style={{width:"200px"}}
                             variant="contained"
                             className={classes.button}
                             color="secondary"
@@ -312,7 +254,6 @@ export default function HomePage() {
                           </Button>
                         </Grid>
                       </Grid>
-                      <br />
                       <Grid
                         item
                         container
@@ -323,6 +264,7 @@ export default function HomePage() {
                       >
                         <Grid item>
                           <Button
+                            style={{width:"200px"}}
                             variant="contained"
                             className={classes.button}
                             color="secondary"
@@ -330,11 +272,12 @@ export default function HomePage() {
                             href="https://drive.google.com/file/d/1nTYLJwaNzChRetQrEge80izJDbOtNbo-/view?usp=sharing"
                             target="_blank"
                           >
-                            FAQs & Code of Conduct
+                            FAQs & Inquiries
                           </Button>
                         </Grid>
                         <Grid item>
                           <Button
+                            style={{width:"200px"}}
                             variant="contained"
                             className={classes.button}
                             color="secondary"
@@ -401,9 +344,14 @@ export default function HomePage() {
                         </Typography>
                         <a
                           target="_blank"
-                          href="https://devfolio.co/external-apply/dsc-slop"
                         >
-                          <Fab variant="extended" color="secondary">
+                          <Fab variant="extended" color="secondary"
+                          onClick={() => {
+                            setAlertMsg(
+                              'Student Registrations are closed Now !'
+                            );
+                            setOpen(true);
+                          }}>
                             <School style={{ margin: 8 }} />
                             Be A Winner !
                           </Fab>
@@ -450,24 +398,17 @@ export default function HomePage() {
                 className="section"
                 item
                 xs={12}
-                // data-percentage="80"
-                // data-centered="true"
               >
                 <Container className="w-full mb-24">
                   <Paper
                     className={classes.paper}
-                    // style={{ backgroundColor: '#0000' }}
                   >
                     <Typography className="txt--gradient-orange" variant="h4">
                       <b> Event Timeline</b>
                     </Typography>
-                    {/* <Divider variant="middle" /> */}
                     <TimelineHorizontal />
-
-                    {/* <CustomizedTimeline /> */}
                   </Paper>
                 </Container>
-                {/* <hr className="bg-white xs:block w-full hidden" /> */}
                 <div className="w-full xs:hidden absolute bottom-0 transform -translate-y-12">
                   <Footer />
                 </div>
