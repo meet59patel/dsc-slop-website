@@ -5,6 +5,7 @@ import Grow from '@material-ui/core/Grow';
 import Box from '@material-ui/core/Box';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 function LeaderBoardTable2() {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,7 @@ function LeaderBoardTable2() {
       const usersList = response.data;
       let rank = 1;
       usersList.forEach((obj) => (obj['rank'] = rank++));
+      usersList.forEach((obj) => (obj['github_url'] = `https://github.com/${obj.username}`));
       setUsers(usersList);
       setLoaded(true);
       console.log(window.screen.height / 144);
@@ -57,6 +59,7 @@ function LeaderBoardTable2() {
                 title: '       Username',
                 field: 'username',
                 align: 'center',
+                render: rowData => {return <span><GitHubIcon fontSize='small'/><a href={rowData.github_url}> {rowData.username}</a></span>},
                 headerStyle: { whiteSpace: 'pre' },
               },
               {
